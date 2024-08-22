@@ -4,7 +4,6 @@ import shutil
 import subprocess
 import time
 from colorama import Fore
-import win32api
 from itertools import cycle
 from threading import Thread
 from time import sleep
@@ -51,7 +50,7 @@ print(Fore.LIGHTYELLOW_EX + "    V1" , Fore.GREEN + '''
 
 def show_menu():
     print("                                                  ")
-    print(Fore.LIGHTYELLOW_EX + "BY ABD125141")
+    print(Fore.LIGHTYELLOW_EX + "BY A125141")
     print("                             ")
     print(Fore.LIGHTRED_EX + " ID",Fore.LIGHTYELLOW_EX   + "            VIRES NAME" , Fore.LIGHTCYAN_EX +   "                   RISK" , Fore.LIGHTMAGENTA_EX + "                 GOUL")
     print(Fore.GREEN + "----------------------------------------------------------------------------------")
@@ -127,8 +126,8 @@ def main():
             ########################################################################################## GHOST #######################################################################################################################
 
         elif choice == '2':
-            ip_address = input(Fore.LIGHTMAGENTA_EX + "Password (16 characters): ")
-            port = input(Fore.LIGHTGREEN_EX + "Enter your message to the victim: ")
+            ip_address = input(Fore.LIGHTMAGENTA_EX + "Enter the Massage Title: ")
+            port = input(Fore.LIGHTGREEN_EX + "Enter the Massage: ")
 
             print(Fore.YELLOW + "We prepare everything for you, relax...")
             time.sleep(5)
