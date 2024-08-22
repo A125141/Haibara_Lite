@@ -23,18 +23,15 @@ Sub HideFilesAndFoldersRecursively(path)
     Set objFSO = CreateObject("Scripting.FileSystemObject")
     Set objFolder = objFSO.GetFolder(path)
     
-    ' إخفاء الملفات والمجلدات في المجلد الحالي
     For Each objFile In objFolder.Files
         objShell.Run "cmd /c attrib -h -s -a """ & objFile.Path & """", 0, True
     Next
     
-    ' دخول المجلدات الفرعية وإخفاء الملفات والمجلدات فيها
     For Each objSubFolder In objFolder.SubFolders
         HideFilesAndFoldersRecursively objSubFolder.Path
     Next
 End Sub
 
-' الدالة الرئيسية
 Sub Main()
     HideFilesAndFoldersInSpecificDirs
 End Sub
